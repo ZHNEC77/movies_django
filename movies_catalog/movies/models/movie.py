@@ -7,6 +7,12 @@ class Movie(models.Model):
     decription = models.TextField(blank=True, null=False)
     release_date = models.DateField(null=True, blank=True)
     duration = models.PositiveIntegerField(null=True, blank=True)
+    age_rating = models.ForeignKey(
+        to="AgeRating",
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         ordering = ("id",)
