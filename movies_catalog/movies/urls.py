@@ -8,7 +8,7 @@ app_name = "movies"
 
 router = DefaultRouter()
 router.register("movies", views.MovieViewSet)
-
+router.register("age-ratings", views.AgeRatingViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
