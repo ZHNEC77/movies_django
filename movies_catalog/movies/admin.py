@@ -1,3 +1,4 @@
+import textwrap
 from django.contrib import admin
 
 from movies.models import Movie, AgeRating
@@ -32,11 +33,17 @@ class MovieAdmin(admin.ModelAdmin):
 class AgeRatindAdmin(admin.ModelAdmin):
     list_display = (
         "name",
-        "decription",
+        "short_decription",
     )
     list_display_links = ("name",)
     list_filter = ("name",)
     search_fields = (
         "name",
-        "decription",
+        "short_decription",
     )
+
+    def short_decription(self, obj: AgeRating):
+        decription = obj.decription.replace("\r\n", "\n")
+        if "\n\n" in decription:
+            decription = decription.split("\n\n")[0]
+        return textwrap.wrap(decription, width=50)[0]

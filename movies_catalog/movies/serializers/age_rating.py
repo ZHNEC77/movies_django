@@ -10,3 +10,6 @@ class AgeRatingSerializer(serializers.ModelSerializer):
             "name",
             "decription",
         )
+
+
+# class AgeRating
