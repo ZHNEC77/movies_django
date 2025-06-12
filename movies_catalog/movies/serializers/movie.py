@@ -1,19 +1,7 @@
 from rest_framework import serializers
-from movies.models import Movie, AgeRating
-from movies.serializers.age_rating import AgeRatingSerializer
-
-
-class MovieSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Movie
-        fields = (
-            "id",
-            "title",
-            "decription",
-            "release_date",
-            "duration",
-            "age_rating",
-        )
+from movies.models import AgeRating
+from movies.serializers.age_rating_base import AgeRatingSerializer
+from movies.serializers.movie_base import MovieSerializer
 
 
 class MovieSerializerExtend(serializers.HyperlinkedModelSerializer):

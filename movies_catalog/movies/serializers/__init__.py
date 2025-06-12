@@ -1,4 +1,5 @@
-from movies.serializers.movie import MovieSerializer as MovieSerializer
-from movies.serializers.age_rating import AgeRatingSerializer as AgeRatingSerializer
+from movies.serializers.movie_base import MovieSerializer as MovieSerializer
 from movies.serializers.movie import MovieSerializerExtend as MovieSerializerExtend
 from movies.serializers.movie import MovieDetailSerializerExtend as MovieDetailSerializerExtend
+from movies.serializers.age_rating_base import AgeRatingSerializer as AgeRatingSerializer
+from movies.serializers.age_rating import AgeRatingDetailSerializer as AgeRatingDetailSerializer
